@@ -49,9 +49,11 @@ aclInstance.allow([
 ]);
 const UserProvider = (children) => {
     const [user, setUser] = (0, react_1.useState)(null);
+    const [role, setRole] = (0, react_1.useState)(null);
     const saveUser = (user) => {
         setUser(user);
+        setRole(user.role); // Save the user's role
     };
-    return (react_1.default.createElement(userContext_1.default.Provider, { value: { user, saveUser } }, "(children)"));
+    return (react_1.default.createElement(userContext_1.default.Provider, { value: { user, saveUser, role } }, "(children)"));
 };
 exports.default = UserProvider;

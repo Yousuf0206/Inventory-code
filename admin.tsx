@@ -5,7 +5,7 @@ import  UserContext  from './userContext';
 const PurchaseAmountComponent: React.FC = () => {
     const  role : any = React.useContext(UserContext);
   
-    if (role!== 'admin') {
+  if (role!== 'admin') {
       return null;
     }
   

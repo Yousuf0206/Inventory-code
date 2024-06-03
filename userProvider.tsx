@@ -23,18 +23,21 @@ aclInstance.allow([
   }
 ]);
 
-const UserProvider: React.FC = ( children ) => {
-  const [user, setUser] = useState<IUser | null>(null);
-
-  const saveUser = (user: IUser) => {
-    setUser(user);
+const UserProvider: React.FC = ( children)  => {
+    const [user, setUser] = useState<IUser | null>(null);
+    const [role, setRole] = useState<string | null>(null);
+  
+    const saveUser = (user: IUser) => {
+      setUser(user);
+      setRole(user.role); // Save the user's role
+    };
+  
+    return (
+      <UserContext.Provider value={{ user, saveUser, role }}>
+        (children)
+      </UserContext.Provider>
+    );
   };
 
-  return (
-    <UserContext.Provider value={{ user, saveUser }}>
-      (children)
-    </UserContext.Provider>
-  );
-};
 
 export default UserProvider;

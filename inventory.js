@@ -33,7 +33,7 @@ const removeItem = (name, quantity) => {
 const displayInventory = () => {
     const tableBody = document.getElementById('table_body');
     //const tableBody: HTMLElement | null
-    tableBody === null || tableBody === void 0 ? void 0 : tableBody.innerHTML = '';
+    tableBody?.innerHTML = '';
     inventory.forEach((item) => {
         const row = document.createElement('tr');
         const nameCell = document.createElement('td');

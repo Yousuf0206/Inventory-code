@@ -6,9 +6,10 @@ interface IUser {
 }
 
 interface IUserContext {
-  user: IUser | null;
-  saveUser: (user: IUser) => void;
-}
+    user: IUser | null;
+    saveUser: (user: IUser) => void;
+    role: string | null; // Add this property
+  }
 
 const UserContext = React.createContext<IUserContext | undefined>(undefined);
 
