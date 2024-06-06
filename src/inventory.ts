@@ -1,7 +1,7 @@
 // inventory.ts
 import React, { useState } from 'react';
 import  UserContext  from './userContext';
-import PurchaseAmountComponent from './admin';
+import PurchaseAmountComponent from './admin;
 interface Item {
   name: string;
   quantity: number;
